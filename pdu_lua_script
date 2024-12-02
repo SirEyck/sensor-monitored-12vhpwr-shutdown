@@ -1,0 +1,50 @@
+local id = event.args.id -- internal variable, do not change
+local arduino_data = event.args.message -- internal variable, do not change
+
+local acceptable_temp = 60 ---- set this variable to the max temp you're willing to accept
+local pc_power_outlet = 1 ---- which outlet your pc is connected to
+
+
+local function tooHot(temp)
+  if temp > acceptable_temp then
+    return true
+  end
+  return false
+end
+
+local function cut_power()
+  devices.system.SetOut{output = pc_power_outlet, value = false}
+  logf("Connector possibly melting. Cutting power to PC")
+end
+
+
+local function checkTemps(temps_array)
+  ---- no temperatures received from arduino. Something is broken.
+  if temps_array == nil then
+    logf("No data received from arduino")
+    
+    ---- consider doing something here like pre-emptively cutting power. 
+    ---- will monitor log for a while to assess how many times this no-	
+    ---- data problem occurs before writing an action in here. 
+    ---- For now, just log the event
+  end
+  
+  local logstring = "Temps detected: "
+  
+  for i, temp in pairs(temps_array["temps"]) do
+    logstring = logstring .. temp .. " "
+    
+    if tooHot(temp) then
+      cut_power()
+    end
+  end
+  
+  logf(logstring) --- display temps in system log
+end
+ 
+
+local temps_array = json.decode(arduino_data)
+
+checkTemps(temps_array)
+
+
