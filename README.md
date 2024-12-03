@@ -20,12 +20,14 @@ The listed breadboard has traces built inside the PCB but they can't easily be s
 ## Wiring schematic for DS18B20 temp sensors on Arduino
 I heavily referenced this guide to learn how to use these sensors: https://randomnerdtutorials.com/guide-for-ds18b20-temperature-sensor-with-arduino/
 
-There is a wiring diagram for both single and multiple sensor versions. I'd suggest not using parasite mode with four sensors.
+There is a wiring diagram for both single and multiple sensor versions. 
 
-<add image of wiring diagram here>
+![wiring diagram for arduino](/assets/images/ds18b20_arduino_multiple.webp)
 
 To summarise:
 - Wire the breadboard to the arduino on the 5V pin, GND pin and pin 4 as the data line
+- You'll need a 4.7k Ohm pull-up resistor, my sensors came with one
+- I'd suggest not using parasite mode with four sensors, wiring in the 5V line is more reliable
 
 ## Wiring between PDU and arduino
 
