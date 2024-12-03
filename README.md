@@ -29,6 +29,10 @@ To summarise:
 - You'll need a 4.7k Ohm pull-up resistor, my sensors came with one
 - I'd suggest not using parasite mode with four sensors, wiring in the 5V line is more reliable
 
+## Sparkfun solderable breadboard layout
+![breadboard layout](/assets/images/breadboard.jpg)
+
+
 ## Wiring between PDU and arduino
 
 - Wire the arduino to the PDU on a GND pin, and pins 0/1 RX/TX.
