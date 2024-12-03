@@ -40,3 +40,6 @@ To summarise:
  
 ## Netio 4C PDU settings
 ![pdu settings](/assets/images/pdu_actions.png)
+
+## Demo of real-world application of setup
+https://www.youtube.com/watch?v=I-UHbSZBi1A
