@@ -32,6 +32,10 @@ To summarise:
 ## Sparkfun solderable breadboard layout
 ![breadboard layout](/assets/images/breadboard.jpg)
 
+- [Pic of my breadboard from the front](/assets/images/breadboard-front.jpg)
+- [Pic of my breadboard from the back](/assets/images/breadboard-back.jpg)
+- [Manufacturer's schematic of breadboard](/assets/pdf/solderable_breadboard_mini.pdf)
+
 
 ## Wiring between PDU and arduino
 
