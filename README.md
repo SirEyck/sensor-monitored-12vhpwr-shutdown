@@ -37,3 +37,6 @@ To summarise:
 
 - Wire the arduino to the PDU on a GND pin, and pins 0/1 RX/TX.
   -  Cross over the receive/transmit lines, the arduino's TX needs to go to the PDU's RX and vice versa
+ 
+## Netio 4C PDU settings
+![pdu settings](/assets/images/pdu_actions.png)
